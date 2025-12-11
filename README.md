@@ -1,619 +1,365 @@
-Below is an 8‑week, Java‑focused Data Structures & Algorithms study plan built around the 80/20 rule: we’ll focus on the “vital few” concepts that yield most of the benefit and are heavily represented on LeetCode.
+# 8-Week DSA Mastery Plan for Java (80-20 Principle)
 
-**Assumptions**
-- You know basic Java syntax (variables, loops, methods, classes).  
-- You can spend ~1.5–2 hours per day, 5–6 days a week.  
-- Goal: Be able to **understand problems, pick the right data structure / pattern, and implement solutions in Java**.
+## 🎯 Core Philosophy
+Focus on the 20% of concepts that solve 80% of problems: Arrays, HashMaps, Two Pointers, Trees, DFS/BFS, and Dynamic Programming basics.
 
 ---
 
-## Overview of the 8 Weeks (80/20 Focus)
+## 📚 **WEEK 1: Arrays & Strings Fundamentals**
 
-**You’ll mainly master:**
-1. Arrays & Strings (+ Two Pointers, Sliding Window)
-2. Hash-based structures (HashMap, HashSet)
-3. Linked Lists
-4. Stack & Queue
-5. Binary Search (on arrays, answers, boundaries)
-6. Basic Sorting & Complexity
-7. Trees & Binary Search Trees (BST)
-8. Graph basics (BFS/DFS)
-9. Recursion & Backtracking
-10. Dynamic Programming (fundamentals)
+### Core Concepts to Learn:
+- Array manipulation and traversal
+- String operations in Java
+- Time/Space complexity basics (Big O)
+- Java Collections basics (ArrayList, StringBuilder)
 
-We’ll mix **learning + coding** every week. For each topic, you’ll see:
-- Core concept(s)
-- What to study/implement
-- LeetCode problems (approx. easy → medium → a bit harder)
-- Key ideas reinforced
+### Study Materials:
+1. **Day 1-2**: Array basics, indexing, iteration patterns
+2. **Day 3-4**: String methods (.charAt(), .substring(), StringBuilder)
+3. **Day 5-6**: Two-pointer technique introduction
+4. **Day 7**: Practice and review
 
----
+### LeetCode Problems:
 
-# Week 1 – Foundations, Arrays & Strings
+#### 🟢 **Easy (Start Here)**
+1. **[1. Two Sum](https://leetcode.com/problems/two-sum/)**
+   - *Concepts*: Array traversal, HashMap for optimization
+   - *Key Learning*: Trade space for time complexity
 
-### Goals
-- Be comfortable with time/space complexity.
-- Get fluent in Java array & String manipulation.
-- Start reading and solving simple LeetCode problems.
+2. **[217. Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)**
+   - *Concepts*: HashSet usage, duplicate detection
+   - *Key Learning*: When to use Set vs Map
 
----
+3. **[344. Reverse String](https://leetcode.com/problems/reverse-string/)**
+   - *Concepts*: Two-pointer technique, in-place modification
+   - *Key Learning*: Space-efficient algorithms
 
-### 1.1 Core Theory (Day 1–2)
-**Study:**
-- Big‑O notation:
-  - Common complexities: O(1), O(log n), O(n), O(n log n), O(n²)
-  - How loops and nested loops affect complexity
-- Java basics you’ll use often:
-  - Arrays (`int[]`, `int[][]`)
-  - Strings (`String`, `StringBuilder`)
-  - For/while loops, enhanced for loop
-  - Basic I/O not required for LeetCode, but know how to write a `main` method
-
-**Practice (No-code or light-code):**
-- Look at pseudo-code and estimate time complexity.
-- Write small functions: reverse array, count characters, etc.
+#### 🟡 **Medium (Challenge Yourself)**
+4. **[238. Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)**
+   - *Concepts*: Prefix/suffix products, space optimization
+   - *Key Learning*: Breaking complex problems into simpler parts
 
 ---
 
-### 1.2 Arrays & Strings (Day 3–6)
+## 📚 **WEEK 2: HashMap & HashSet Mastery**
 
-**Concepts:**
-- Traversing arrays
-- In-place modification vs creating new arrays
-- Basic String operations: substring, charAt, length, toCharArray
-- Two Pointers (intro: left/right index moving towards center or along array)
+### Core Concepts to Learn:
+- HashMap internal working (hash functions, collisions)
+- HashSet operations
+- Frequency counting patterns
+- Sliding window technique basics
 
-**Implement yourself (from scratch):**
-- Reverse an array
-- Reverse a string
-- Find max/min in an array
-- Check if a string is palindrome (two pointers)
+### Study Materials:
+1. **Day 1-2**: HashMap methods (put, get, containsKey, getOrDefault)
+2. **Day 3-4**: HashSet and when to use Set vs Map
+3. **Day 5-6**: Frequency counting and grouping patterns
+4. **Day 7**: Practice and review
 
----
+### LeetCode Problems:
 
-### 1.3 LeetCode Practice – Arrays & Strings (Day 3–7)
+#### 🟢 **Easy**
+1. **[242. Valid Anagram](https://leetcode.com/problems/valid-anagram/)**
+   - *Concepts*: Character frequency counting
+   - *Key Learning*: Multiple approaches (sorting vs HashMap)
 
-Start from easy to build confidence. Focus on understanding the **why** of solutions.
+2. **[1. Two Sum](https://leetcode.com/problems/two-sum/)** (Revisit with HashMap)
+   - *Concepts*: One-pass HashMap solution
+   - *Key Learning*: Optimization techniques
 
-**Beginner – Arrays & Strings**
-1. **Two Sum** (`#1`, Easy)  
-   - Key Ideas: HashMap for complement lookup, time complexity O(n).
-2. **Best Time to Buy and Sell Stock** (`#121`, Easy)  
-   - Key Ideas: One pass, track min price and max profit.
-3. **Valid Palindrome** (`#125`, Easy)  
-   - Key Ideas: Two pointers, character checks.
-4. **Merge Sorted Array** (`#88`, Easy)  
-   - Key Ideas: Merge two sorted arrays from the back using pointers.
+#### 🟡 **Medium**
+3. **[49. Group Anagrams](https://leetcode.com/problems/group-anagrams/)**
+   - *Concepts*: HashMap with List values, string patterns
+   - *Key Learning*: Choosing the right key for grouping
 
-**Stretch / Medium Intro:**
-5. **Longest Substring Without Repeating Characters** (`#3`, Medium)  
-   - Key Ideas: Sliding window, HashSet/HashMap.
-6. **Container With Most Water** (`#11`, Medium)  
-   - Key Ideas: Two pointers, area calculation.
+4. **[128. Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)**
+   - *Concepts*: HashSet for O(1) lookups, sequence building
+   - *Key Learning*: Thinking outside sorting
 
 ---
 
-### Key Reinforcements This Week
-- Big‑O reasoning.
-- Basic array/string processing.
-- Two Pointers intro.
-- Getting used to LeetCode interface and reading constraints.
+## 📚 **WEEK 3: Two Pointers & Sliding Window**
+
+### Core Concepts to Learn:
+- Two-pointer patterns (opposite ends, same direction)
+- Sliding window (fixed and variable size)
+- Fast and slow pointers
+- Subarray/substring problems
+
+### Study Materials:
+1. **Day 1-2**: Two-pointer technique patterns
+2. **Day 3-4**: Fixed-size sliding window
+3. **Day 5-6**: Variable-size sliding window
+4. **Day 7**: Practice and review
+
+### LeetCode Problems:
+
+#### 🟢 **Easy**
+1. **[125. Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)**
+   - *Concepts*: Two pointers from opposite ends
+   - *Key Learning*: Character validation and comparison
+
+2. **[283. Move Zeroes](https://leetcode.com/problems/move-zeroes/)**
+   - *Concepts*: Two pointers same direction, in-place modification
+   - *Key Learning*: Maintaining relative order
+
+#### 🟡 **Medium**
+3. **[3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)**
+   - *Concepts*: Sliding window with HashSet
+   - *Key Learning*: Window expansion and contraction
+
+4. **[11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/)**
+   - *Concepts*: Two pointers optimization
+   - *Key Learning*: Greedy approach in pointer movement
+
+#### 🔴 **Hard (Stretch Goal)**
+5. **[76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)**
+   - *Concepts*: Complex sliding window with frequency maps
+   - *Key Learning*: Advanced window manipulation
 
 ---
 
-# Week 2 – Hashing + More Two Pointers & Sliding Window
+## 📚 **WEEK 4: Linked Lists**
 
-### Goals
-- Understand and use `HashMap`, `HashSet`.
-- Solidify Two Pointers and Sliding Window patterns (core LeetCode patterns).
+### Core Concepts to Learn:
+- LinkedList implementation in Java
+- Pointer manipulation
+- Fast and slow pointer (Floyd's algorithm)
+- Reversal techniques
 
----
+### Study Materials:
+1. **Day 1-2**: LinkedList node structure, traversal
+2. **Day 3-4**: Adding/removing nodes, dummy nodes
+3. **Day 5-6**: Fast-slow pointer, cycle detection
+4. **Day 7**: Practice and review
 
-### 2.1 HashMap & HashSet in Java (Day 1–2)
+### LeetCode Problems:
 
-**Study:**
-- `HashMap<K,V>` operations: put, get, containsKey, remove, iteration.
-- `HashSet<E>` operations: add, contains, remove.
-- Hashing conceptually: average O(1), worst O(n).
+#### 🟢 **Easy**
+1. **[206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)**
+   - *Concepts*: Iterative and recursive reversal
+   - *Key Learning*: Pointer manipulation fundamentals
 
-**Implement:**
-- Frequency count: given an array, return map of `value → count`.
-- First non-repeating character in a string using HashMap.
+2. **[21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)**
+   - *Concepts*: Merging technique, dummy node usage
+   - *Key Learning*: Handling edge cases
 
----
+#### 🟡 **Medium**
+3. **[141. Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)**
+   - *Concepts*: Floyd's cycle detection
+   - *Key Learning*: Fast-slow pointer pattern
 
-### 2.2 Two Pointers & Sliding Window (Day 3–4)
+4. **[19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)**
+   - *Concepts*: Two-pointer with gap
+   - *Key Learning*: One-pass solutions
 
-**Concepts:**
-- Two Pointers:
-  - Opposite ends of array (e.g., sum, palindrome).
-  - Same direction pointers (fast/slow for linked lists; next week).
-- Sliding Window:
-  - Fixed window size.
-  - Variable window size (expand when condition not met, shrink when it is).
-
----
-
-### 2.3 LeetCode Practice – Hash & Sliding Window (Day 3–7)
-
-**Beginner / Easy:**
-1. **Valid Anagram** (`#242`, Easy)  
-   - HashMap or array for char counts.
-2. **Contains Duplicate** (`#217`, Easy)  
-   - HashSet to detect duplicates.
-3. **Group Anagrams** (`#49`, Medium but very common)  
-   - Map from “signature” (sorted string or char count) → list of words.
-
-**Sliding Window / Two Pointers:**
-4. **Longest Substring Without Repeating Characters** (`#3`, Medium, revisit)  
-   - Use sliding window and HashMap for char indices.
-5. **Minimum Size Subarray Sum** (`#209`, Medium)  
-   - Variable sliding window for minimal length.
-6. **Move Zeroes** (`#283`, Easy)  
-   - Two pointers to shift non-zero elements forward.
-
-**Stretch:**
-7. **Permutation in String** (`#567`, Medium)  
-   - Sliding window + frequency arrays.
+5. **[143. Reorder List](https://leetcode.com/problems/reorder-list/)**
+   - *Concepts*: Find middle, reverse, merge
+   - *Key Learning*: Combining multiple techniques
 
 ---
 
-### Key Reinforcements This Week
-- HashMap / HashSet become “go-to” tools.
-- Sliding Window as a reusable template.
-- Recognize patterns in problems (duplicates, subarray length, substring uniqueness).
+## 📚 **WEEK 5: Binary Trees & Tree Traversal**
+
+### Core Concepts to Learn:
+- Tree structure and terminology
+- DFS traversals (inorder, preorder, postorder)
+- BFS (level-order traversal)
+- Recursion patterns for trees
+
+### Study Materials:
+1. **Day 1-2**: Tree node structure, basic traversals
+2. **Day 3-4**: Recursive patterns, base cases
+3. **Day 5-6**: BFS using Queue, level-order traversal
+4. **Day 7**: Practice and review
+
+### LeetCode Problems:
+
+#### 🟢 **Easy**
+1. **[104. Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)**
+   - *Concepts*: Basic recursion, DFS
+   - *Key Learning*: Tree height calculation
+
+2. **[226. Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/)**
+   - *Concepts*: Tree modification, recursion
+   - *Key Learning*: Modifying tree structure
+
+3. **[100. Same Tree](https://leetcode.com/problems/same-tree/)**
+   - *Concepts*: Tree comparison, simultaneous traversal
+   - *Key Learning*: Multiple tree traversal
+
+#### 🟡 **Medium**
+4. **[102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)**
+   - *Concepts*: BFS with Queue
+   - *Key Learning*: Level-wise processing
+
+5. **[230. Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)**
+   - *Concepts*: Inorder traversal, BST properties
+   - *Key Learning*: Leveraging BST properties
 
 ---
 
-# Week 3 – Linked Lists, Stack & Queue, Fast/Slow Pointers
+## 📚 **WEEK 6: Graph Basics (DFS/BFS)**
 
-### Goals
-- Understand pointers/references in Java.
-- Manipulate linked lists (head, next pointers).
-- Use stacks/queues to solve typical problems.
+### Core Concepts to Learn:
+- Graph representations (adjacency list/matrix)
+- DFS implementation (recursive and iterative)
+- BFS implementation
+- Connected components
 
----
+### Study Materials:
+1. **Day 1-2**: Graph representations in Java
+2. **Day 3-4**: DFS implementation and applications
+3. **Day 5-6**: BFS implementation and shortest path
+4. **Day 7**: Practice and review
 
-### 3.1 Linked List Basics (Day 1–3)
+### LeetCode Problems:
 
-**Study:**
-- Singly Linked List structure (`ListNode { int val; ListNode next; }`).
-- How references work (no copying nodes, just pointers).
-- Common operations: insert at head, delete node, reverse list.
+#### 🟢 **Easy**
+1. **[733. Flood Fill](https://leetcode.com/problems/flood-fill/)**
+   - *Concepts*: DFS on 2D grid
+   - *Key Learning*: Grid as graph representation
 
-**Implement yourself:**
-- Define `ListNode` class.
-- Build a linked list from array.
-- Reverse linked list iteratively.
+#### 🟡 **Medium**
+2. **[200. Number of Islands](https://leetcode.com/problems/number-of-islands/)**
+   - *Concepts*: DFS/BFS for connected components
+   - *Key Learning*: Marking visited cells
 
----
+3. **[133. Clone Graph](https://leetcode.com/problems/clone-graph/)**
+   - *Concepts*: DFS/BFS with HashMap
+   - *Key Learning*: Deep copying graph structures
 
-### 3.2 Stacks & Queues (Day 3–4)
+4. **[207. Course Schedule](https://leetcode.com/problems/course-schedule/)**
+   - *Concepts*: Cycle detection in directed graph
+   - *Key Learning*: Topological sort basics
 
-**Study:**
-- Stack (LIFO): `push`, `pop`, `peek`. Use `java.util.Stack` or `Deque`.
-- Queue (FIFO): `offer`, `poll`, `peek`. Use `LinkedList` or `ArrayDeque`.
-
-**Implement / Use:**
-- Use a stack to reverse a string.
-- Use a queue to simulate a simple line (enqueue/dequeue).
-
----
-
-### 3.3 Fast & Slow Pointers (Day 4–5)
-
-- Typical uses: detect cycles, find middle node.
-- Move fast pointer 2 steps, slow pointer 1 step.
+5. **[994. Rotting Oranges](https://leetcode.com/problems/rotting-oranges/)**
+   - *Concepts*: Multi-source BFS
+   - *Key Learning*: Level-wise BFS processing
 
 ---
 
-### 3.4 LeetCode Practice – Linked List & Stack/Queue (Day 5–7)
+## 📚 **WEEK 7: Dynamic Programming Introduction**
 
-**Linked List – Starter:**
-1. **Reverse Linked List** (`#206`, Easy)  
-   - Iterative reverse; practice pointer manipulation.
-2. **Merge Two Sorted Lists** (`#21`, Easy)  
-   - Merge like merge step in merge sort using pointers.
-3. **Middle of the Linked List** (`#876`, Easy)  
-   - Fast/slow pointer pattern.
+### Core Concepts to Learn:
+- Memoization vs Tabulation
+- Identifying DP problems
+- 1D DP patterns
+- State definition and transitions
 
-**Cycle & More:**
-4. **Linked List Cycle** (`#141`, Easy)  
-   - Fast/slow pointers to detect cycle.
-5. **Remove Nth Node From End of List** (`#19`, Medium)  
-   - Two pointers; distance between them is `n`.
+### Study Materials:
+1. **Day 1-2**: DP concept, recursion to DP
+2. **Day 3-4**: Memoization techniques
+3. **Day 5-6**: Bottom-up DP (tabulation)
+4. **Day 7**: Practice and review
 
-**Stack / Queue:**
-6. **Valid Parentheses** (`#20`, Easy)  
-   - Use stack to validate bracket sequence.
-7. **Min Stack** (`#155`, Easy/Medium)  
-   - Stack that supports `getMin()` in O(1).
+### LeetCode Problems:
 
-**Stretch:**
-8. **Palindrome Linked List** (`#234`, Easy/Medium)  
-   - Find middle, reverse second half, compare.
+#### 🟢 **Easy**
+1. **[70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)**
+   - *Concepts*: Basic DP, Fibonacci pattern
+   - *Key Learning*: Identifying recurrence relations
 
----
+2. **[746. Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/)**
+   - *Concepts*: DP with cost optimization
+   - *Key Learning*: Building on base cases
 
-### Key Reinforcements This Week
-- Comfort with references/pointers in Java.
-- Implementing common linked list operations.
-- Using stack/queue as generic tools for various problems.
+#### 🟡 **Medium**
+3. **[198. House Robber](https://leetcode.com/problems/house-robber/)**
+   - *Concepts*: DP with constraints
+   - *Key Learning*: Include/exclude pattern
 
----
+4. **[322. Coin Change](https://leetcode.com/problems/coin-change/)**
+   - *Concepts*: Unbounded knapsack variant
+   - *Key Learning*: Min/max optimization in DP
 
-# Week 4 – Binary Search, Sorting, & Problem Patterns
-
-### Goals
-- Master binary search implementations and patterns.
-- Understand basic sorting and where it appears in problems.
-- Apply binary search not only on arrays but also on solution space (answers).
+5. **[300. Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)**
+   - *Concepts*: Classic DP pattern
+   - *Key Learning*: Building sequences with DP
 
 ---
 
-### 4.1 Sorting & Complexity (Day 1–2)
+## 📚 **WEEK 8: Integration & Advanced Practice**
 
-**Study:**
-- Basic sorting algorithms concepts:
-  - Selection sort, insertion sort (for understanding).
-  - Quick sort and merge sort (high-level idea).
-- Java built-in sorting:
-  - `Arrays.sort()`, `Collections.sort()` and time complexity O(n log n).
-- When sorting helps:
-  - Two pointers on sorted array.
-  - Greedy choices.
+### Core Concepts to Learn:
+- Combining multiple techniques
+- Problem pattern recognition
+- Optimization strategies
+- Interview problem-solving approach
 
----
+### Study Materials:
+1. **Day 1-2**: Review weak areas from weeks 1-7
+2. **Day 3-4**: Practice mixed problems
+3. **Day 5-6**: Timed problem-solving sessions
+4. **Day 7**: Mock interview problems
 
-### 4.2 Binary Search (Day 2–4)
+### LeetCode Problems (Mixed Difficulty):
 
-**Patterns:**
-- Classic binary search (find target in sorted array).
-- Variants:
-  - Find leftmost or rightmost occurrence.
-  - Search insert position.
-  - Binary search on answer (e.g., minimal capacity, minimal time).
+#### 🟡 **Medium Combo Problems**
+1. **[56. Merge Intervals](https://leetcode.com/problems/merge-intervals/)**
+   - *Concepts*: Sorting + merging logic
+   - *Key Learning*: Interval manipulation
 
----
+2. **[54. Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)**
+   - *Concepts*: Matrix traversal patterns
+   - *Key Learning*: Boundary management
 
-### 4.3 LeetCode Practice – Binary Search & Sorting (Day 4–7)
+3. **[139. Word Break](https://leetcode.com/problems/word-break/)**
+   - *Concepts*: DP + string manipulation
+   - *Key Learning*: String DP patterns
 
-**Binary Search Basics:**
-1. **Binary Search** (`#704`, Easy)  
-   - Implement standard binary search.
-2. **Search Insert Position** (`#35`, Easy)  
-   - Variant returning index where target would be inserted.
-3. **First Bad Version** (`#278`, Easy)  
-   - Binary search on an abstract condition.
+4. **[98. Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)**
+   - *Concepts*: Tree traversal with constraints
+   - *Key Learning*: Maintaining invariants
 
-**On Rotated Arrays:**
-4. **Search in Rotated Sorted Array** (`#33`, Medium)  
-   - Recognize which half is sorted and adjust binary search.
-
-**Binary Search on Answer:**
-5. **Koko Eating Bananas** (`#875`, Medium)  
-   - Binary search on eating speed (answer space).
-6. **Capacity To Ship Packages Within D Days** (`#1011`, Medium)  
-   - Binary search on capacity; check feasibility.
-
-**Sorting + Two Pointers:**
-7. **3Sum** (`#15`, Medium)  
-   - Sort + two pointers pattern.
-8. **Merge Intervals** (`#56`, Medium)  
-   - Sort by start time + merge overlapping.
+#### 🔴 **Hard (If Ready)**
+5. **[42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)**
+   - *Concepts*: Two pointers + problem modeling
+   - *Key Learning*: Complex problem decomposition
 
 ---
 
-### Key Reinforcements This Week
-- Binary search templates: careful with `mid`, `left`, `right` updates.
-- Recognize when problem asks for “min/max feasible value” → often binary search on answer.
-- Using sorting to simplify problems.
+## 📈 **Daily Study Schedule Template**
+
+### Weekday (1.5-2 hours)
+- **30 min**: Learn/review concept
+- **45 min**: Solve 1-2 problems
+- **30 min**: Review solutions, understand optimal approaches
+- **15 min**: Document learnings in notes
+
+### Weekend (3-4 hours)
+- **1 hour**: Deep dive into weak areas
+- **2 hours**: Solve 3-4 problems
+- **1 hour**: Review week's problems, identify patterns
 
 ---
 
-# Week 5 – Trees & Binary Search Trees (BST)
+## 💡 **Key Success Tips**
 
-### Goals
-- Understand tree structure, traversal methods.
-- Use recursion comfortably.
-- Solve common tree problems (height, traversal, path sums).
+1. **Don't just code** - Understand WHY each approach works
+2. **Time yourself** - Start with unlimited time, gradually add constraints
+3. **Review others' solutions** - Learn multiple approaches
+4. **Track patterns** - Keep a problem pattern journal
+5. **Revisit problems** - Solve again after 2-3 weeks without looking at solution
 
----
+## 📊 **Progress Tracking**
 
-### 5.1 Tree Basics (Day 1–2)
-
-**Study:**
-- Binary tree vs Binary Search Tree (BST).
-- Node definition: `TreeNode { int val; TreeNode left; TreeNode right; }`.
-- Traversals:
-  - Preorder (root-left-right)
-  - Inorder (left-root-right)
-  - Postorder (left-right-root)
-  - Level-order (BFS using queue)
-
-**Implement:**
-- Recursive traversals (print values).
-- Compute tree height.
+Create a spreadsheet with:
+- Problem name/number
+- Date attempted
+- Time taken
+- Solved independently? (Yes/No/Partial)
+- Key concepts used
+- Notes for review
 
 ---
 
-### 5.2 BST Properties (Day 3)
-
-- Inorder traversal of BST is sorted.
-- Searching/inserting in BST (recursive & iterative).
-
----
-
-### 5.3 LeetCode Practice – Trees (Day 3–7)
-
-**Tree Basics (Easy):**
-1. **Maximum Depth of Binary Tree** (`#104`, Easy)  
-   - Simple recursion.
-2. **Same Tree** (`#100`, Easy)  
-   - Recursively compare structure and values.
-3. **Invert Binary Tree** (`#226`, Easy)  
-   - Swap left/right recursively.
-
-**Traversal / BFS:**
-4. **Binary Tree Level Order Traversal** (`#102`, Medium)  
-   - Use queue (BFS) to traverse level by level.
-5. **Symmetric Tree** (`#101`, Easy/Medium)  
-   - Recursive mirror check or BFS.
-
-**BST-specific:**
-6. **Validate Binary Search Tree** (`#98`, Medium)  
-   - Use min/max bounds or inorder traversal.
-7. **Lowest Common Ancestor of a BST** (`#235`, Easy/Medium)  
-   - Use BST property; move left/right depending on values.
-
-**Path / Sum-type (Stretch):**
-8. **Path Sum** (`#112`, Easy)  
-   - Recursion with remaining sum.
-9. **Path Sum II** (`#113`, Medium)  
-   - Track current path; backtracking.
-
----
-
-### Key Reinforcements This Week
-- Recursion pattern: base case + recursive calls.
-- Moving from “printing traversal” to solving more complex tree queries.
-- Understanding how BST property simplifies logic.
-
----
-
-# Week 6 – Graph Basics & More Recursion / Backtracking
-
-### Goals
-- Understand graphs as adjacency lists.
-- Learn BFS/DFS patterns and when to use each.
-- Get exposure to backtracking (for combinatorial problems).
-
----
-
-### 6.1 Graph Fundamentals (Day 1–3)
-
-**Study:**
-- Graph representations:
-  - Adjacency list using `List<List<Integer>>` or `Map<Integer, List<Integer>>`.
-- Directed vs undirected graphs.
-- BFS:
-  - Use queue, track visited.
-- DFS:
-  - Recursive or using stack, track visited.
-
-**Implement small examples:**
-- Simple BFS/DFS on a small graph.
-
----
-
-### 6.2 Backtracking Basics (Day 3–4)
-
-**Concepts:**
-- Decision tree: choose/add → recurse → un-choose/remove.
-- Use arrays or lists to build candidates.
-- Base case: when combination/permutation length is enough or sum is met.
-
----
-
-### 6.3 LeetCode Practice – Graph & Backtracking (Day 4–7)
-
-**Graph / BFS / DFS:**
-1. **Number of Islands** (`#200`, Medium)  
-   - Grid as implicit graph, DFS/BFS to mark visited.
-2. **Max Area of Island** (`#695`, Medium)  
-   - Very similar; count size.
-3. **Flood Fill** (`#733`, Easy/Medium)  
-   - DFS/BFS from a starting pixel.
-4. **Clone Graph** (`#133`, Medium, stretch)  
-   - Use HashMap to clone nodes using DFS/BFS.
-
-**Backtracking:**
-5. **Subsets** (`#78`, Medium)  
-   - Generate all subsets using recursion.
-6. **Combination Sum** (`#39`, Medium)  
-   - Backtracking with remaining sum.
-7. **Permutations** (`#46`, Medium)  
-   - Backtracking with used/not-used markers.
-
----
-
-### Key Reinforcements This Week
-- Recognizing grid problems as graph problems.
-- Using DFS/BFS templates.
-- Understanding typical backtracking “template”:  
-  choose → recurse → un-choose.
-
----
-
-# Week 7 – Dynamic Programming (DP) Fundamentals
-
-### Goals
-- Understand overlapping subproblems and optimal substructure.
-- Learn bottom-up DP on 1D & 2D arrays.
-- Solve common DP problems: sequences, knapsack-like, grid paths.
-
----
-
-### 7.1 DP Concepts (Day 1–2)
-
-**Study:**
-- When DP applies:
-  - Problem can be broken into subproblems whose solutions can be reused.
-- Approaches:
-  - Top-down with memoization (recursion + HashMap/array).
-  - Bottom-up tabulation.
-- Typical DP states: `dp[i]`, `dp[i][j]` etc.
-
----
-
-### 7.2 Classic DP Problems (Day 2–7)
-
-**Start with simple 1D DP:**
-1. **Climbing Stairs** (`#70`, Easy)  
-   - `dp[i] = dp[i-1] + dp[i-2]`.
-2. **House Robber** (`#198`, Medium)  
-   - `dp[i] = max(dp[i-1], dp[i-2] + nums[i])`.
-
-**Subsequence/string DP:**
-3. **Longest Increasing Subsequence** (`#300`, Medium)  
-   - `dp[i]` = LIS ending at `i`; O(n²) DP approach.
-4. **Longest Common Subsequence** (`#1143`, Medium)  
-   - 2D DP; `dp[i][j]` based on `text1[i-1]` and `text2[j-1]`.
-
-**Grid DP:**
-5. **Unique Paths** (`#62`, Medium)  
-   - `dp[i][j] = dp[i-1][j] + dp[i][j-1]`.
-6. **Minimum Path Sum** (`#64`, Medium)  
-   - Similar but with costs.
-
-**Stretch:**
-7. **Coin Change** (`#322`, Medium)  
-   - `dp[amount]` = min coins to make that amount.
-
----
-
-### Key Reinforcements This Week
-- Turning a recursive idea into DP state and recurrence.
-- Starting from base cases and building up.
-- Distinguishing between subsequence, substring, combination problems.
-
----
-
-# Week 8 – Integration, Patterns, and Timed Practice
-
-### Goals
-- Combine all concepts.
-- Practice recognizing problem patterns quickly.
-- Simulate “interview-style” LeetCode sessions.
-
----
-
-### 8.1 Pattern Review (Day 1–3)
-
-Revisit each “big pattern” with 1–2 representative problems:
-
-1. **Two Pointers / Sliding Window**
-   - Re-solve (without looking at previous code)  
-     - `#3 Longest Substring Without Repeating Characters`  
-     - `#11 Container With Most Water`  
-
-2. **HashMap / HashSet**
-   - Re-solve:  
-     - `#1 Two Sum`  
-     - `#49 Group Anagrams`
-
-3. **Linked List**
-   - Re-solve:  
-     - `#206 Reverse Linked List`  
-     - `#141 Linked List Cycle` / `#19 Remove Nth Node from End`
-
-4. **Binary Search**
-   - Re-solve:  
-     - `#704 Binary Search`  
-     - `#33 Search in Rotated Sorted Array`  
-     - `#875 Koko Eating Bananas`
-
-5. **Tree / BST**
-   - Re-solve:  
-     - `#104 Maximum Depth of Binary Tree`  
-     - `#98 Validate BST`  
-
-6. **Graph / DFS/BFS**
-   - Re-solve:  
-     - `#200 Number of Islands`
-
-7. **Backtracking**
-   - Re-solve:  
-     - `#78 Subsets` or `#46 Permutations`
-
-8. **DP**
-   - Re-solve:  
-     - `#70 Climbing Stairs`  
-     - `#198 House Robber`
-
----
-
-### 8.2 New Mixed Problems (Day 3–6)
-
-Pick 1–2 per day; try to solve in **<40 minutes** each:
-
-1. **Medium Mix:**
-   - `#56 Merge Intervals` (sort + merge)  
-   - `#215 Kth Largest Element in an Array` (heap or quickselect, stretch)  
-   - `#79 Word Search` (backtracking on a grid)  
-   - `#49 Group Anagrams` (hashing, if not solid)
-
-2. **Harder Medium / Light Hard (Stretch):**
-   - `#560 Subarray Sum Equals K` (prefix sums + HashMap)  
-   - `#322 Coin Change` (DP, if you skipped it before)  
-   - `#207 Course Schedule` (graph + topological sort concept, stretch)
-
----
-
-### 8.3 Simulated “Interview Day” (Day 7)
-
-- Pick 2 problems you **haven’t** done, ideally from:
-  - Arrays/Strings
-  - Trees/Graphs
-  - DP
-
-For each:
-1. Spend 5–10 minutes only on reading and designing:
-   - Restate the problem in your own words.
-   - Identify which pattern it might be.
-   - Write out example(s) by hand.
-2. Then code without switching tabs to the solution.
-3. After coding, compare to the discussion / solution:
-   - What was different?
-   - Did you choose the right data structure / pattern?
-   - Where did you get stuck?
-
----
-
-# How to Think & Learn Independently
-
-1. **Always try on your own first (15–25 min)** before reading hints.
-2. When stuck, ask yourself:
-   - Is there a pattern I know (two pointers, sliding window, hashing, recursion, DP)?
-   - Can I reduce the problem to a simpler known problem?
-3. After reading a solution, **implement from scratch again later in the week**.
-4. Keep a **“pattern notebook”**:
-   - For each solved problem, note:
-     - Problem type (array, tree, DP, etc.)
-     - Pattern used
-     - Time/space complexity
-     - A 1–2 line summary of the key idea
-
----
-
-# Summary of the 20% Core You’re Mastering
-
-If you complete this plan, you’ll be solid on:
-
-- **Data Structures:** arrays, strings, HashMap/HashSet, linked lists, stack, queue, binary trees/BST, basic graphs.
-- **Patterns:** two pointers, sliding window, fast/slow pointers, binary search (on arrays & answers), recursion, DFS/BFS, backtracking, foundational DP.
-- **Java skills:** implementing these patterns idiomatically with Java collections and classes.
-
-If you’d like, I can next:
-- Turn this into a weekly checklist (with boxes and daily tasks), or  
-- Provide skeleton Java templates for each major pattern (binary search, BFS, DP, etc.) for you to fill in.
+## 🎯 **Expected Outcomes**
+
+By the end of 8 weeks, you should be able to:
+- Solve most Easy problems in 15-20 minutes
+- Solve many Medium problems in 30-45 minutes
+- Recognize common patterns instantly
+- Optimize solutions for time/space complexity
+- Confidently approach new problems with a structured methodology
+
+Remember: **Quality > Quantity**. Understanding 100 problems deeply is better than rushing through 500 superficially.
