@@ -1,534 +1,456 @@
-Below is an 8‑week, 80/20‑style roadmap in Java. It focuses on the “vital few” DSA ideas that power most LeetCode problems:
+Below is an 8‑week, Java‑focused DSA roadmap built around the “80‑20” principle: we’ll focus on the small set of concepts and patterns that unlock a large portion of LeetCode (and interview) problems.
 
-- Arrays & Strings  
-- Hashing (HashMap/HashSet)  
-- Two Pointers & Sliding Window  
-- Basic Sorting & Binary Search  
-- Stacks & Queues  
-- Linked Lists  
-- Trees & Binary Search Trees  
-- Basic Recursion & Backtracking  
-- Intro to Graphs (BFS/DFS)  
-- Basic Dynamic Programming patterns  
-
-You’ll code every day (even 30–60 minutes) and use LeetCode as your practice ground.  
-
-**Legend for LeetCode:**  
-- E = Easy, M = Medium, H = Hard  
-- I’ll list only a handful of representative problems per topic; you can add more later.
+**Assumptions:**
+- You know basic Java syntax (variables, loops, methods, classes). If not, spend 1–2 days upfront reviewing.
+- Time: ~1.5–2 hours/day, 5–6 days/week. Adjust pace as needed.
+- Tools: IntelliJ/Eclipse or VS Code, LeetCode, and a notebook for hand‑writing ideas.
 
 ---
 
-## Week 1 – Java Foundations + Arrays & Strings
+## Overview of the Core 20%
 
-**Goal:** Become comfortable writing Java code, loops, conditionals, and handling arrays/strings. Start simple LeetCode problems.
+These are the “high‑leverage” topics we’ll hit repeatedly:
 
-### Core Concepts (20% that matters)
-- Java syntax essentials:
-  - `main` method, input/output (basic `System.out.println`)
-  - Data types, variables, `if/else`, `for`, `while`
-  - Methods: parameters, return types, overloading
-- Arrays:
-  - Declaration, initialization, iteration
-  - Common patterns: sum, max/min, frequency counts
-- Strings:
-  - `String`, `StringBuilder`
-  - Character access, conversion, splitting, joining
+1. **Arrays & Strings + Two Pointers + Prefix sums**
+2. **Hashing (HashMap, HashSet)**
+3. **Stacks & Queues + Monotonic stacks/queues**
+4. **Linked Lists**
+5. **Binary Search (on array & on answer)**
+6. **Basic Sorting + custom comparators**
+7. **Trees & Binary Search Trees (DFS, BFS, recursion)**
+8. **Heaps / PriorityQueue**
+9. **Basic Dynamic Programming (1D and simple 2D)**
+10. **Backtracking (combinations, permutations, subsets)**
 
-### Study Plan
-
-**Days 1–2** – Java basics & setup  
-- Install JDK + IDE (IntelliJ IDEA Community or VS Code with Java plugin).  
-- Learn:
-  - How to write and run a simple class with `public static void main(String[] args)`.  
-  - Basic I/O, loops, methods.
-
-**Days 3–4** – Arrays  
-- 1D arrays: `int[] arr = new int[n];`  
-- Traversals, prefix sums idea (running totals).  
-- In-place updates, basic operations (reverse, rotate conceptually).
-
-**Days 5–7** – Strings  
-- Immutable nature of `String`; when to use `StringBuilder`.  
-- Lowercasing, trimming, splitting, character frequency (e.g., with `int[26]` or `HashMap<Character, Integer>`).
-
-### Suggested LeetCode (Week 1)
-
-**Arrays/Strings (Beginner)**  
-1. **Two Sum (1, E)**  
-   - Type: Array + HashMap  
-   - Reinforces: Array traversal, hash maps, thinking about complements.
-
-2. **Best Time to Buy and Sell Stock (121, E)**  
-   - Type: Array, tracking min and max profit  
-   - Reinforces: One-pass scan, maintaining state (min-so-far, max-profit).
-
-3. **Contains Duplicate (217, E)**  
-   - Type: Array + HashSet  
-   - Reinforces: Using `HashSet`, detecting duplicates efficiently.
-
-4. **Valid Anagram (242, E)**  
-   - Type: String + frequency counting  
-   - Reinforces: Counting characters using array or `HashMap`.
-
-5. **Reverse String (344, E)**  
-   - Type: String + Two Pointers (intro)  
-   - Reinforces: Index manipulation, in-place modification of char array.
+We’ll spiral through these, reinforcing patterns via targeted LeetCode problems.
 
 ---
 
-## Week 2 – Hashing, Two Pointers & Sliding Window
+## Week 1 – Foundations: Arrays, Strings, and Big‑O
 
-**Goal:** Master hash map/set usage and core pointer patterns used in many LC problems.
+**Goals:**
+- Understand time/space complexity at a practical level.
+- Get comfortable with Java collections basics.
+- Solve beginner array/string problems using brute force, then improve.
 
-### Core Concepts
-- HashMap/HashSet:
-  - Insert, lookup, remove; complexity O(1) average
-  - When to choose map vs set
-- Two Pointers:
-  - Left/right indices moving towards each other (or along the array)
-- Sliding Window:
-  - Maintain a “window” (subarray/substring) satisfying a condition
-  - Expand/shrink pattern
+### Concepts to Learn
 
-### Study Plan
+1. **Big‑O (Practically)**
+   - O(1), O(n), O(n log n), O(n²).
+   - How nested loops, sorting, and recursion affect complexity.
+   - Be able to roughly estimate complexity of a method.
 
-**Days 1–2** – HashMap & HashSet in Java  
-- `HashMap<K, V>`: `put`, `get`, `containsKey`, `remove`, iteration over `entrySet`.  
-- `HashSet<E>`: `add`, `contains`, `remove`.
+2. **Java Essentials for DSA**
+   - `int[]`, `String`, `StringBuilder`.
+   - `ArrayList`, basic `List` operations (`add`, `get`, `size`).
+   - Enhanced for‑loops vs index loops.
 
-**Days 3–4** – Two Pointers patterns  
-- Opposite ends: e.g., array reversed, sum to target in **sorted** array.  
-- Same direction: fast/slow pointers to detect conditions (e.g., removing duplicates, cycle detection conceptually).
+3. **Core Array & String Techniques**
+   - Traversal with indices.
+   - In‑place modification.
+   - Two pointers (start/end).
+   - Sliding window (fixed and expanding/contracting windows).
 
-**Days 5–7** – Sliding Window  
-- Fixed window size vs variable window size.  
-- General pattern:
-  - Expand `right`
-  - While condition is violated, shrink `left`
-  - Track best answer (length, count, etc.)
+### Daily Structure (example)
+- Day 1–2: Big‑O, array iteration, simple problems.
+- Day 3–4: Strings, two pointers, sliding window basics.
+- Day 5–6: Mixed practice + review.
 
-### Suggested LeetCode (Week 2)
+### LeetCode Problems (Week 1)
 
-**Hashing / Two Pointers / Sliding Window**
+#### Arrays – Basics
+- **Two Sum** (Easy) – *HashMap, iteration*  
+  Concepts: array traversal, hash map, complement idea (value → index).
+- **Best Time to Buy and Sell Stock** (Easy) – *Single pass*  
+  Concepts: running minimum, max profit in one pass.
 
-1. **Valid Palindrome (125, E)**  
-   - Type: Two Pointers (string)  
-   - Reinforces: Left/right pointers, character checks, ignoring non-alphanumeric.
+#### Strings – Basics & Two Pointers
+- **Valid Palindrome** (Easy) – *Two pointers, filtering chars*  
+  Concepts: char checks, left/right pointers, ignoring non‑alphanumeric.
+- **Implement strStr()** (Easy) – *Substring search, brute force*  
+  Concepts: nested loops, string substring, time complexity awareness.
 
-2. **Move Zeroes (283, E)**  
-   - Type: Two Pointers (array)  
-   - Reinforces: In-place array manipulation, slow/fast pointer logic.
-
-3. **Two Sum II – Input array is sorted (167, E)**  
-   - Type: Two Pointers on sorted array  
-   - Reinforces: Using sorted property, converging pointers.
-
-4. **Longest Substring Without Repeating Characters (3, M)**  
-   - Type: Sliding Window + HashSet/Map  
-   - Reinforces: Variable-size window, tracking seen characters.
-
-5. **Minimum Size Subarray Sum (209, M)**  
-   - Type: Sliding Window (array)  
-   - Reinforces: Shrink/expand pattern while maintaining sum condition.
+#### Intro Sliding Window
+- **Maximum Subarray** (Kadane’s Algorithm) (Medium on LC, conceptually Easy‑Med)  
+  Concepts: running sum, reset when negative, O(n) dynamic thinking.
+- **Longest Substring Without Repeating Characters** (Medium)  
+  Concepts: sliding window, `HashSet` or `HashMap`, left/right pointers.
 
 ---
 
-## Week 3 – Sorting Basics & Binary Search
+## Week 2 – Hashing + More Two Pointers/Sliding Window
 
-**Goal:** Understand basic sorting ideas and use binary search patterns confidently.
+**Goals:**
+- Be fluent with `HashMap` and `HashSet`.
+- Solve classic frequency and window problems.
 
-### Core Concepts
-- Sorting:
-  - Use `Arrays.sort()` & `Collections.sort()`
-  - Understand O(n log n) idea and stability in a rough sense.
-- Binary Search:
-  - Classic search for target in sorted array
-  - Variants: first/last occurrence, lower/upper bound, condition-based search.
+### Concepts to Learn
 
-### Study Plan
+1. **HashMap & HashSet**
+   - Common operations: `put`, `get`, `containsKey`, `contains`, `remove`.
+   - Counting frequencies (char counts, number counts).
+   - Maps vs sets: when to use which.
 
-**Days 1–2** – Sorting  
-- Sort primitives: `Arrays.sort(int[])`.  
-- Sort objects: `Arrays.sort(arr, Comparator.comparingInt(...))`.  
-- Recognize when to sort first then use two pointers / binary search.
+2. **Patterns With Hashing**
+   - Frequency tables (`int[26]` vs `HashMap<Character,Integer>`).
+   - Checking anagrams.
+   - Using map to store indices for prefix or running conditions.
 
-**Days 3–5** – Classic Binary Search  
-- Implement `binarySearch(int[] nums, int target)`.  
-- Handle mid calculation carefully: `mid = left + (right - left) / 2`.  
-- On each step, decide which half to keep.
+3. **Sliding Window, cont.**
+   - Expanding window until invalid, then shrinking from left.
+   - Windows for “at most K” / “exactly K”.
 
-**Days 6–7** – Variants of Binary Search  
-- Find leftmost/rightmost index of target.  
-- “Search on answer” pattern: monotonic property (e.g., smallest capacity that works, minimum days).
+### LeetCode Problems (Week 2)
 
-### Suggested LeetCode (Week 3)
+#### Hashing & Frequency
+- **Valid Anagram** (Easy)  
+  Concepts: char counting with array/map, comparison of counts.
+- **Two Sum II – Input array is sorted** (Easy)  
+  Concepts: two pointers on sorted array; contrast vs HashMap approach.
+- **Contains Duplicate** (Easy)  
+  Concepts: `HashSet` to detect duplicates.
 
-**Binary Search & Sorting**
+#### Classic Sliding Window
+- **Minimum Size Subarray Sum** (Medium)  
+  Concepts: sliding window to find minimal length, while loop for shrinking.
+- **Longest Repeating Character Replacement** (Medium)  
+  Concepts: window, tracking max frequency in current window, `HashMap`.
 
-1. **Binary Search (704, E)**  
-   - Type: Basic binary search  
-   - Reinforces: Template, boundaries, loop invariants.
-
-2. **First Bad Version (278, E)**  
-   - Type: Binary search on boolean condition  
-   - Reinforces: “Search on condition,” minimizing index that satisfies predicate.
-
-3. **Search Insert Position (35, E)**  
-   - Type: Binary search variant  
-   - Reinforces: Returning insertion index when target not found.
-
-4. **Find Peak Element (162, M)**  
-   - Type: Binary search on array “shape”  
-   - Reinforces: Using relative comparisons instead of exact target.
-
-5. **Search in Rotated Sorted Array (33, M)**  
-   - Type: Binary search with rotation logic  
-   - Reinforces: Handling modified sorted arrays, conditional splits.
+#### Bonus/Stretch
+- **Group Anagrams** (Medium)  
+  Concepts: hashing canonical key (sorted string or counts), map of key → list.
 
 ---
 
-## Week 4 – Stacks & Queues + Linked Lists (Basics)
+## Week 3 – Linked Lists, Stack & Queue Fundamentals
 
-**Goal:** Learn stack/queue ADTs and train with linked list operations.
+**Goals:**
+- Pointer manipulation in singly linked lists.
+- Understand how stacks/queues work and solve typical problems with them.
 
-### Core Concepts
-- Stack:
-  - LIFO; implemented via `Stack` or `Deque` (`ArrayDeque` is preferred).  
-- Queue:
-  - FIFO; `Queue` interface (e.g., `LinkedList`, `ArrayDeque`).
-- Linked Lists:
-  - Node structure: `ListNode { int val; ListNode next; }`
-  - Insertion, deletion, traversal
-  - Dummy head pattern to simplify edge cases
+### Concepts to Learn
 
-### Study Plan
+1. **Linked Lists in Java**
+   - Custom `ListNode` class (`int val; ListNode next;`).
+   - Traversal, insertion, deletion conceptually (you’ll mostly manipulate via problems).
+   - Dummy nodes to simplify edge cases.
+   - Fast & slow pointers (Floyd’s cycle detection idea).
 
-**Days 1–3** – Stack & Queue  
-- Implement basic stack push/pop/peek.  
-- Implement queue add/poll/peek.  
-- Understand typical use cases: parentheses checking, undo, BFS.
+2. **Stacks**
+   - LIFO concept.
+   - Java: `Deque<Integer>` as stack (`push`, `pop`, `peek`).
+   - Typical uses: parentheses matching, next greater element, undo operations.
 
-**Days 4–7** – Linked Lists  
-- Singly linked lists: insert at head/tail, delete, find.  
-- Fast/slow pointer techniques (middle, cycle).
+3. **Queues**
+   - FIFO concept.
+   - Java: `Queue<Integer>` with `LinkedList` or `ArrayDeque`.
+   - Level‑order traversals (trees later), simple BFS patterns.
 
-### Suggested LeetCode (Week 4)
+### LeetCode Problems (Week 3)
 
-**Stacks**
+#### Linked Lists
+- **Reverse Linked List** (Easy)  
+  Concepts: iterative pointer reversal, optionally recursive version.
+- **Merge Two Sorted Lists** (Easy)  
+  Concepts: two pointers, dummy head, merging logic.
+- **Linked List Cycle** (Easy)  
+  Concepts: fast & slow pointers, cycle detection.
 
-1. **Valid Parentheses (20, E)**  
-   - Type: Stack  
-   - Reinforces: Pushing opening brackets, matching closing one.
+#### Stack & Parentheses
+- **Valid Parentheses** (Easy)  
+  Concepts: stack for matching opening/closing brackets.
+- **Min Stack** (Medium)  
+  Concepts: designing stack with extra data (track current min), composition of two stacks or store pairs.
 
-2. **Min Stack (155, E)**  
-   - Type: Stack with auxiliary min tracking  
-   - Reinforces: Keeping extra info in stack; design.
-
-3. **Daily Temperatures (739, M)**  
-   - Type: Monotonic Stack  
-   - Reinforces: Using stack to find “next greater” element pattern.
-
-**Linked Lists**
-
-4. **Reverse Linked List (206, E)**  
-   - Type: Linked list pointer manipulation  
-   - Reinforces: Iterative reversal; understanding `prev`, `curr`, `next`.
-
-5. **Merge Two Sorted Lists (21, E)**  
-   - Type: Linked list merging  
-   - Reinforces: Dummy head pattern, merging in sorted order.
-
-6. **Linked List Cycle (141, E)**  
-   - Type: Fast/slow pointers  
-   - Reinforces: Two-pointer cycle detection.
-
-7. **Remove Nth Node From End of List (19, M)**  
-   - Type: Two pointers + linked list  
-   - Reinforces: Dummy node, offset pointers, careful edge handling.
+#### Optional
+- **Palindrome Linked List** (Easy/Medium)  
+  Concepts: find middle, reverse second half, compare both halves.
 
 ---
 
-## Week 5 – Trees & Binary Search Trees
+## Week 4 – Binary Search + Sorting + More Stacks
 
-**Goal:** Comfortably traverse trees (DFS/BFS) and use BST properties.
+**Goals:**
+- Master binary search patterns on arrays.
+- Gain intuition for when to apply binary search, including “search on answer”.
+- Understand standard sorting and when to use custom comparators.
 
-### Core Concepts
-- Tree basics:
-  - `TreeNode { int val; TreeNode left; TreeNode right; }`
-  - Depth-first search (preorder, inorder, postorder, recursive first)
-- Binary Search Tree (BST):
-  - Left < root < right
-  - Search, insert, find min/max
-- Tree height, leaf, path concepts.
+### Concepts to Learn
 
-### Study Plan
+1. **Binary Search Basics**
+   - Template for searching in sorted array (iterative).
+   - Handling `left`, `right`, `mid` without infinite loops.
+   - Variants: first occurrence, last occurrence.
+   - Edge cases (off‑by‑one).
 
-**Days 1–3** – Tree Traversals  
-- Recursive DFS: preorder, inorder, postorder.  
-- Practice writing these from memory.
+2. **Binary Search on Answer / Condition**
+   - Search for smallest `x` that satisfies a condition (`check(x)` function).
+   - Using monotonic property (false…false, true…true).
 
-**Days 4–5** – BFS on Trees  
-- Use a queue to traverse level by level.  
-- Understand when BFS is better (e.g., level-based problems).
+3. **Sorting**
+   - `Arrays.sort`, `Collections.sort`.
+   - Custom comparator for objects (`(a, b) -> Integer.compare(a[0], b[0])`).
+   - How sorting helps with greedy/two pointer solutions.
 
-**Days 6–7** – BST Basics  
-- Implement search in BST, insert, find min/max.  
-- Leverage sorted property in recursion.
+4. **Monotonic Stack (Intro)**
+   - Stack that’s increasing or decreasing.
+   - Used for “next greater/smaller element” type problems.
 
-### Suggested LeetCode (Week 5)
+### LeetCode Problems (Week 4)
 
-**Trees / BST**
+#### Classic Binary Search
+- **Binary Search** (Easy)  
+  Concepts: basic template implementation.
+- **Search Insert Position** (Easy)  
+  Concepts: variant where we return insertion index.
+- **First Bad Version** (Easy)  
+  Concepts: searching boundary using `isBadVersion` API.
 
-1. **Maximum Depth of Binary Tree (104, E)**  
-   - Type: DFS (recursive)  
-   - Reinforces: Basic recursion, returning aggregated results.
+#### Binary Search on Answer
+- **Find Minimum in Rotated Sorted Array** (Medium)  
+  Concepts: binary search with extra logic, rotated array properties.
+- **Search in Rotated Sorted Array** (Medium)  
+  Concepts: decide which half is sorted, search accordingly.
 
-2. **Balanced Binary Tree (110, E)**  
-   - Type: DFS + height computation  
-   - Reinforces: Postorder traversal, combining child info.
+#### Sorting + Two Pointers
+- **Merge Intervals** (Medium)  
+  Concepts: sort by start time, iterate and merge overlapping intervals.
+- **3Sum** (Medium)  
+  Concepts: sort array + two pointers, skipping duplicates.
 
-3. **Symmetric Tree (101, E)**  
-   - Type: Recursive tree comparison  
-   - Reinforces: Mirror comparisons, recursion with multiple arguments.
-
-4. **Binary Tree Level Order Traversal (102, M)**  
-   - Type: BFS with queue  
-   - Reinforces: Level-by-level traversal, grouping results.
-
-5. **Validate Binary Search Tree (98, M)**  
-   - Type: DFS with bounds (min/max) or inorder traversal  
-   - Reinforces: Using value constraints through recursive calls.
-
-6. **Lowest Common Ancestor of a BST (235, E/M)**  
-   - Type: BST property exploitation  
-   - Reinforces: Structural reasoning based on value comparisons.
-
----
-
-## Week 6 – Recursion & Backtracking (Intro) + More Tree Practice
-
-**Goal:** Get comfortable with recursion and basic backtracking. Still very common in LC.
-
-### Core Concepts
-- Recursion:
-  - Base case, recursive case
-  - Call stack concept, avoiding infinite recursion
-- Backtracking:
-  - Decision tree: choose → explore → unchoose
-  - Generating subsets, permutations, combinations
-
-### Study Plan
-
-**Days 1–2** – Recursion basics  
-- Factorial, Fibonacci (for learning, not performance).  
-- Simple recursion on arrays/strings (e.g., recursively reverse a string).
-
-**Days 3–5** – Backtracking patterns  
-- Template:
-  ```java
-  void backtrack(State state) {
-      if (goal) { record solution; return; }
-      for (choice in choices) {
-          make choice;
-          backtrack(updatedState);
-          undo choice;
-      }
-  }
-  ```
-
-**Days 6–7** – Tree-related recursion / backtracking  
-- Path-based problems, sum paths, etc.
-
-### Suggested LeetCode (Week 6)
-
-**Backtracking / Recursion**
-
-1. **Subsets (78, M)**  
-   - Type: Backtracking (power set)  
-   - Reinforces: Choose/not-choose pattern, recursion depth.
-
-2. **Permutations (46, M)**  
-   - Type: Backtracking with swapping / visited array  
-   - Reinforces: Generating all permutations, managing visited state.
-
-3. **Combinations (77, M)**  
-   - Type: Backtracking with start index  
-   - Reinforces: Controlling duplicates via ordering, pruning.
-
-**Tree + Recursion**
-
-4. **Path Sum (112, E)**  
-   - Type: Recursive tree DFS  
-   - Reinforces: Passing cumulative sum through recursion.
-
-5. **Path Sum II (113, M)**  
-   - Type: Tree + backtracking  
-   - Reinforces: Building and unwinding path lists.
+#### Monotonic Stack Intro
+- **Daily Temperatures** (Medium)  
+  Concepts: use stack of indices to find next greater temperature.
 
 ---
 
-## Week 7 – Graphs (BFS/DFS) + Intro to Dynamic Programming
+## Week 5 – Trees & Basic Graph‑like Traversals
 
-**Goal:** Learn how to represent graphs and do BFS/DFS; see basic DP (1D).
+**Goals:**
+- Learn binary tree traversals (pre/in/post‑order) via recursion.
+- Understand BFS vs DFS, and use them for typical problems.
 
-### Core Concepts
-- Graph representation:
-  - Adjacency list using `Map<Integer, List<Integer>>` or `List<List<Integer>>`
-  - Directed vs undirected, cycles
-- Graph traversal:
-  - BFS with queue (shortest path in unweighted graph)
-  - DFS recursive or stack-based
-- Dynamic Programming (DP):
-  - Overlapping subproblems, optimal substructure
-  - Memoization vs tabulation
-  - 1D DP examples
+### Concepts to Learn
 
-### Study Plan
+1. **Binary Tree Basics**
+   - `TreeNode` class structure.
+   - Recursive DFS traversals: preorder (root‑left‑right), inorder, postorder.
+   - Height, size, leaves.
 
-**Days 1–3** – Graph BFS/DFS  
-- Build adjacency list from edge list.  
-- BFS on graph to find shortest path (in edges).  
-- DFS to count connected components.
+2. **BFS on Trees (Level Order)**
+   - Using `Queue<TreeNode>`.
+   - Level by level operations.
 
-**Days 4–7** – Basic DP  
-- Classic 1D DP problems: Fibonacci with memo, climbing stairs, house robber.
+3. **Depth‑First Search (DFS) Patterns**
+   - Recursive helper methods.
+   - Returning values from recursion (min depth, max depth, balanced, etc.).
 
-### Suggested LeetCode (Week 7)
+### LeetCode Problems (Week 5)
 
-**Graphs**
+#### DFS (Recursive)
+- **Maximum Depth of Binary Tree** (Easy)  
+  Concepts: recursion, base case, returning 1 + max(left, right).
+- **Path Sum** (Easy)  
+  Concepts: recursion with running sum, leaf checks.
+- **Diameter of Binary Tree** (Easy/Medium)  
+  Concepts: returning height while updating global diameter.
 
-1. **Number of Islands (200, M)**  
-   - Type: DFS/BFS on grid  
-   - Reinforces: Grid as graph, visited set, counting connected components.
+#### BFS
+- **Binary Tree Level Order Traversal** (Medium)  
+  Concepts: BFS with queue, tracking levels.
+- **Minimum Depth of Binary Tree** (Easy)  
+  Concepts: BFS to find first leaf, contrasting with DFS approach.
 
-2. **Max Area of Island (695, M)**  
-   - Type: DFS grid  
-   - Reinforces: Similar to above, plus returning area counts.
-
-3. **Clone Graph (133, M)**  
-   - Type: Graph BFS/DFS with HashMap  
-   - Reinforces: Graph traversal and mapping original-to-clone nodes.
-
-**Dynamic Programming**
-
-4. **Climbing Stairs (70, E)**  
-   - Type: 1D DP (Fibonacci-like)  
-   - Reinforces: Recurrence `dp[i] = dp[i-1] + dp[i-2]`.
-
-5. **House Robber (198, M)**  
-   - Type: 1D DP  
-   - Reinforces: “Take or skip” pattern: `dp[i] = max(dp[i-1], dp[i-2] + nums[i])`.
-
-6. **Maximum Subarray (53, E/M)**  
-   - Type: Kadane’s Algorithm (DP-ish)  
-   - Reinforces: Local vs global maximum, simple iterative DP.
+#### Additional Patterns
+- **Symmetric Tree** (Easy)  
+  Concepts: recursion with two pointers (left subtree vs right subtree).
+- **Invert Binary Tree** (Easy)  
+  Concepts: simple recursive swapping.
 
 ---
 
-## Week 8 – Classic DP Patterns & Mixed Practice
+## Week 6 – Heaps (PriorityQueue) + More Tree/BFS
 
-**Goal:** Solidify DP & revisit all earlier topics with mixed sets of LC problems.
+**Goals:**
+- Use `PriorityQueue` for top‑K, smallest/largest elements, and greedy strategies.
+- Apply BFS/DFS to slightly more complex problems (e.g., grids).
 
-### Core Concepts
-- Common DP patterns:
-  - 1D linear DP (already seen)
-  - 2D DP for sequences or grids
-  - “Knapsack-like” state transitions
-- Integrating multiple concepts:
-  - E.g., sliding window + hash, tree + recursion + DP.
+### Concepts to Learn
 
-### Study Plan
+1. **PriorityQueue in Java**
+   - Min‑heap by default.
+   - For max‑heap: use comparator (`new PriorityQueue<>((a, b) -> b - a)`).
+   - Operations: `offer`, `poll`, `peek`.
 
-**Days 1–3** – 2D / Grid DP  
-- Understand table definition: `dp[i][j]` meaning.  
-- Transitions from neighboring cells.
+2. **Typical Heap Uses**
+   - Top‑K (largest/smallest).
+   - Merging sorted lists.
+   - Dijkstra‑like patterns (just conceptually).
 
-**Days 4–5** – Sequence DP / Edit-based problems  
-- Define `dp[i][j]` as operation counts or lengths.
+3. **Grid BFS/DFS (Graph‑like Thinking)**
+   - 2D grid as implicit graph.
+   - Directions array `int[][] dirs = {{1,0},{-1,0},{0,1},{0,-1}};`.
+   - Visited tracking.
 
-**Days 6–7** – Mixed review  
-- Pick a couple of problems mixing arrays, trees, graphs, DP.
+### LeetCode Problems (Week 6)
 
-### Suggested LeetCode (Week 8)
+#### Priority Queue
+- **Kth Largest Element in an Array** (Medium)  
+  Concepts: maintain min‑heap of size k or use quickselect; start with heap.
+- **Top K Frequent Elements** (Medium)  
+  Concepts: frequency map + heap or bucket sort.
+- **Merge k Sorted Lists** (Hard, but good practice)  
+  Concepts: `PriorityQueue` storing current node from each list.
 
-**DP**
-
-1. **Unique Paths (62, M)**  
-   - Type: 2D grid DP  
-   - Reinforces: Counting paths with simple transitions.
-
-2. **Coin Change (322, M)**  
-   - Type: 1D/2D unbounded knapsack-like DP  
-   - Reinforces: Minimization DP, impossible states (`Integer.MAX_VALUE` style).
-
-3. **Edit Distance (72, H – stretch)**  
-   - Type: 2D DP on strings  
-   - Reinforces: Defining dp on prefixes, multiple operations (insert/delete/replace).
-
-**Mixed Review (choose based on interest)**
-
-4. **Product of Array Except Self (238, M)**  
-   - Type: Arrays, prefix/suffix  
-   - Reinforces: Constant space trick, left-right passes.
-
-5. **Kth Smallest Element in a BST (230, M)**  
-   - Type: BST + inorder traversal  
-   - Reinforces: Inorder = sorted order for BST.
-
-6. **Course Schedule (207, M)**  
-   - Type: Graph + Topological sort  
-   - Reinforces: Detecting cycles in directed graph with BFS or DFS.
+#### Grid / BFS‑DFS
+- **Number of Islands** (Medium)  
+  Concepts: DFS/BFS on grid, visited marking.
+- **Rotting Oranges** (Medium)  
+  Concepts: multi‑source BFS, tracking time layers.
 
 ---
 
-## How to Work Through Problems (for All Weeks)
+## Week 7 – Dynamic Programming (1D & Simple 2D)
 
-Use this general workflow for each LeetCode problem:
+**Goals:**
+- Learn to identify when DP is appropriate (overlapping subproblems, optimal substructure).
+- Implement basic 1D and simple 2D DP problems.
 
-1. **Read & Restate:**  
-   - Paraphrase problem in your own words.  
-   - Identify input/output types and constraints.
+### Concepts to Learn
 
-2. **Classify the Pattern:**  
-   - Ask: “Is this array, string, tree, graph?”  
-   - Then: “Which pattern: two pointers, sliding window, BFS, DP, etc.?”
+1. **DP Fundamentals**
+   - Recursion with memoization vs bottom‑up tabulation.
+   - Define state: `dp[i] = ...`.
+   - Base cases, transitions, iteration order.
+   - Space optimization where possible.
 
-3. **Brainstorm & Choose Approach:**  
-   - Start with a brute force idea.  
-   - Then think: “How can I use a known pattern to improve?”
+2. **Common Patterns**
+   - Linear DP (house robber, climbing stairs).
+   - Partition / knapsack‑like intuition (smaller subset here).
+   - Grid DP (paths in grid).
 
-4. **Write Pseudocode First:**  
-   - Keep it short: loops, key variables, conditions.
+### LeetCode Problems (Week 7)
 
-5. **Implement in Java:**  
-   - Only then write actual Java code.  
-   - Pay attention to off-by-one and null checks.
+#### 1D DP
+- **Climbing Stairs** (Easy)  
+  Concepts: Fibonacci‑like DP, `dp[i] = dp[i-1] + dp[i-2]`.
+- **House Robber** (Medium)  
+  Concepts: `dp[i] = max(dp[i-1], dp[i-2] + nums[i])`.
+- **Coin Change** (Medium)  
+  Concepts: combinations to reach amount, unbounded coins.
 
-6. **Test Small Cases Manually:**  
-   - Use very small inputs and walk through step-by-step.
+#### 2D / Grid DP
+- **Unique Paths** (Medium)  
+  Concepts: `dp[i][j] = dp[i-1][j] + dp[i][j-1]`, boundaries.
+- **Minimum Path Sum** (Medium)  
+  Concepts: cumulative sums, `dp[i][j] = grid[i][j] + min(top, left)`.
 
-7. **Analyze Complexity:**  
-   - Time: O(n), O(n log n), etc.  
-   - Space: extra arrays, recursion depth, hash maps.
-
-8. **Review & Generalize:**  
-   - Ask: “What pattern did this use?”  
-   - Add to your mental library: e.g., “This is another sliding window variant.”
-
----
-
-## Weekly Time Allocation (Guideline)
-
-Assuming ~10–12 hours/week:
-
-- ~3–4 hours: Learning concepts (videos, reading, notes).  
-- ~6–8 hours: Solving problems (3–5 problems per session, 4–5 days/week).  
-
-On tough problems, spend 30–45 minutes thinking before looking at hints or solutions. When you do look, re-implement from memory after a short break.
+#### Optional
+- **Longest Increasing Subsequence** (Medium) – start with O(n²) DP  
+  Concepts: nested loops DP, then later you can learn O(n log n) method.
 
 ---
 
-If you’d like, next I can:  
-- Turn this into a day‑by‑day checklist, or  
-- Suggest specific Java learning resources to pair with each week.
+## Week 8 – Backtracking & Combining Patterns
+
+**Goals:**
+- Learn a generic backtracking template.
+- Tackle combination/permutation/subset type problems.
+- Attempt some harder problems that mix multiple patterns.
+
+### Concepts to Learn
+
+1. **Backtracking Template**
+   - General pattern:
+     ```java
+     void backtrack(params...) {
+         if (end condition) {
+             add current path to result;
+             return;
+         }
+         for (choice in choices) {
+             make choice;
+             backtrack(...);
+             undo choice;
+         }
+     }
+     ```
+   - Using a `List<Integer>` as current path, deep copying results.
+
+2. **Typical Backtracking Problems**
+   - Subsets, combinations, permutations.
+   - Choosing or not choosing an element at each step.
+   - Avoiding duplicates via sorting and skipping.
+
+3. **Mixing Concepts**
+   - Using recursion with pruning.
+   - Combining backtracking with sorting or hashing.
+
+### LeetCode Problems (Week 8)
+
+#### Classic Backtracking
+- **Subsets** (Medium)  
+  Concepts: each element either taken or not, power set generation.
+- **Permutations** (Medium)  
+  Concepts: using `boolean[] used` to track used elements.
+- **Combination Sum** (Medium)  
+  Concepts: choosing from candidates, reusing elements, target sum.
+
+#### Handling Duplicates
+- **Subsets II** (Medium)  
+  Concepts: sort input, skip duplicates when `nums[i] == nums[i-1]`.
+- **Combination Sum II** (Medium)  
+  Concepts: similar to above but no reuse of elements, skip duplicates.
+
+#### Mixed / Challenge Problems
+Pick 2–3 from these to push yourself:
+- **Word Search** (Medium) – grid DFS + backtracking.
+- **Validate Binary Search Tree** (Medium) – recursion + inorder traversal.
+- **Course Schedule** (Medium) – graph + DFS/BFS (cycle detection).
+
+---
+
+## How to Study Each Day
+
+1. **Pick 1–2 Topics Only**
+   - Read or watch a short explanation (e.g., 20–30 minutes).
+   - Write a small Java snippet that uses the concept (e.g., simple stack experiment).
+
+2. **Solve 2–4 LeetCode Problems**
+   - Try **alone first** for 20–30 minutes/problem:
+     - Restate the problem in your own words.
+     - Think: “Have I seen a similar pattern?” (array + hash? sliding window? etc.)
+     - If stuck: think about brute force first, then how to optimize.
+   - Then check a solution:
+     - Compare approach, note differences in a notebook.
+     - Re‑implement from memory once.
+
+3. **End‑of‑Week Review**
+   - Re‑implement from scratch 3–5 representative problems without looking.
+   - Summarize patterns in your own words (e.g., “Sliding window problems usually ask for substring/subarray with some property…”).
+
+---
+
+## Key Patterns to Keep in Mind
+
+As you work, constantly ask: *“Which pattern fits?”* Most LeetCode problems you’ll encounter early on fall into these:
+
+- **Array + Two Pointers / Sliding Window**
+- **Array/String + HashMap/HashSet**
+- **Linked List with Fast/Slow Pointers or Reversal**
+- **Stack for parentheses / next greater / expression evaluation**
+- **Binary Search on sorted list or on answer**
+- **Tree DFS/BFS (recursive or queue)**
+- **Heap for top‑K / merging**
+- **1D/2D DP for “max/min ways/cost” type problems**
+- **Backtracking for combinations/permutations/subsets**
+
+If you identify the pattern correctly, the implementation becomes much easier.
+
+---
+
+If you tell me:
+- your current Java level, and  
+- how many hours per week you realistically have,
+
+I can adjust this 8‑week plan into a more precise daily schedule (and tailor problem counts) so it fits you exactly.
